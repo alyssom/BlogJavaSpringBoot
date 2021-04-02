@@ -7,7 +7,8 @@
     <body>
         <header>
             <nav class="navbar navbar-light bg-light">
-                <span class="navbar-brand mb-0 h1" style="font-weight: bold;">Blog do Alyssom</span>
+                <span class="navbar-brand mb-0 h1" style="font-weight: bold; margin-left: 15px;">Blog do Alyssom</span>
+                <a class="btn btn-primary" th:href="${(#mvc.url('CC#getPostForm')).build()}" role="button" style="margin-right: 15px;">Novo Post</a>
             </nav>
         </header>
         <section>
