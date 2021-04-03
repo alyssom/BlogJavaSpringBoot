@@ -41,7 +41,8 @@ public class CodeblogController {
     }
     @RequestMapping(value = "/newpost", method = RequestMethod.POST)
     public String savePost(@Valid Post post, BindingResult result, RedirectAttributes attributes){
-        if (result.hasErrors()){
+        if (result.getFieldValue("autor") == "" || result.getFieldValue("texto") == "" || result.getFieldValue("titulo") == ""){
+            attributes.addFlashAttribute("mensagem", "Verifque se os Campos Obrigatórios foram preenchidos.");
             return "redirect:/newpost";
         }
         post.setData(LocalDate.now());

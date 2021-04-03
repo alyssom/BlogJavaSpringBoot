@@ -6,6 +6,7 @@ import com.sun.istack.NotNull;
 import javax.persistence.*;
 import java.time.LocalDate;
 import javax.annotation.*;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name="TB_POST")
@@ -15,16 +16,16 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @NotNull
+    @NotBlank
     private String titulo;
 
-    @NotNull
+    @NotBlank
     private String autor;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "dd-MM-yyyy")
     private LocalDate data;
 
-    @NotNull
+    @NotBlank
     @Lob
     private String texto;
 
